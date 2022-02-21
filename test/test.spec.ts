@@ -1,4 +1,4 @@
-import {timer} from 'rxjs'
+import {throwError, timer} from 'rxjs'
 import debounce from '../code/debounce'
 import throttle from '../code/throttle'
 import curry from '../code/curry'
@@ -42,7 +42,7 @@ describe("测试用例", () => {
         })
     })
     it("柯里化", (done) => {
-        const generateNumberArray = <T extends number>(count: number) => {
+        const generateNumberArray = <T extends number>(count: T) => {
             let arr = new Array(count)
             let counter = count
             while(counter){
@@ -52,17 +52,17 @@ describe("测试用例", () => {
             }
             return arr as tuple<T, number>
         }
-        const arr = generateNumberArray<5>(5)
+        const arr = generateNumberArray(5)
         const add = (a: number, b: number, c: number, d: number, e: number) => {
             return a + b + c + d + e
         }
         const ret_1 = add(...arr)
         const curryAdd = curry(add)
-        let ret_2: any = 0
+        let ret_2 : unknown = 0
         let index = 0
         ret_2 = curryAdd(arr[index])
         index++
-        while(typeof ret_2 != 'number'){
+        while(typeof ret_2 === 'function'){
             ret_2 = ret_2(arr[index])
             index++
         }
