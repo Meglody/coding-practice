@@ -6,8 +6,13 @@
     "rxjs": "^7.5.1",
     "ts-jest": "^27.1.2"
   },
+  "scripts": {
+    "tsc-promise": "tsc --outFile ./promise/index.js ./promise/index.ts",
+    "test-promise": "promises-aplus-tests ./promise/index.js"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7"
+    "@babel/preset-typescript": "^7.16.7",
+    "promises-aplus-tests": "^2.1.2"
   }
 }
