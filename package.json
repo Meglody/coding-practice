@@ -4,7 +4,8 @@
     "@types/rx": "^4.1.2",
     "jest": "^27.4.6",
     "rxjs": "^7.5.1",
-    "ts-jest": "^27.1.2"
+    "ts-jest": "^27.1.2",
+    "vue": "^3.2.31"
   },
   "scripts": {
     "tsc-promise": "tsc --outFile ./promise/index.js ./promise/index.ts",
