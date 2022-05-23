@@ -4,9 +4,9 @@
 - [x] 柯里化(curry)
 - [ ] compose
 - [ ] pipe
-- [ ] call
-- [ ] apply
-- [ ] bind
+- [x] call
+- [x] apply
+- [x] bind
 
 > 安装
 ```

@@ -14,6 +14,12 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "cz-conventional-changelog": "^3.3.0",
     "promises-aplus-tests": "^2.1.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
