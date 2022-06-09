@@ -24,10 +24,14 @@ const listen = (s: string, cb: () => any) => {
   return () => publishers[s].splice(publishers[s].indexOf(newCb), 1)
 }
 
+// 创建自定义事件
+// const loginEvent = new Event('login')
+
 login().then(res => {
   console.log(res)
   trigger('logined')
   trigger('logined')
+  // window.dispatchEvent(loginEvent)
 })
 
 listen('logined', () => console.log(123))
@@ -35,3 +39,8 @@ const unsubscribe = listen('logined', () => {
   console.log(456)
   unsubscribe()
 })
+
+// 自定义事件（需要有window对象）
+// window.addEventListener('login', () => {
+//   console.log(789)
+// })
